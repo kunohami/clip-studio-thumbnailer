@@ -1,10 +1,15 @@
 # clip-studio-thumbnailer
 
-Nautilus thumbnail previews for Clip Studio Paint `.clip` files on Linux.  (Nautilus is the default file manager for Linux, similar to Windows Explorer)
+![Platform](https://img.shields.io/badge/platform-Linux-blue?logo=linux&logoColor=white)
+![File Manager](https://img.shields.io/badge/file%20manager-Nautilus%20%2F%20GNOME-4A90D9?logo=gnome&logoColor=white)
+![Language](https://img.shields.io/badge/language-Python-3776AB?logo=python&logoColor=white)
+![Tested on](https://img.shields.io/badge/tested%20on-CachyOS-blue)
+
+Nautilus thumbnail previews for Clip Studio Paint `.clip` files on Linux. (Nautilus is the default file manager for GNOME Linux, similar to Windows Explorer)
 
 ## Why
 
-Although Clip Studio Paint is not supported on Linux, If you use a Linux OS as your main system and want to organize your Clip Studio .clip files or backups, this shows you an image preview in the Nautilus GUI.
+Although Clip Studio Paint is not supported on Linux, if you use a Linux OS as your main system and want to organize your Clip Studio `.clip` files or backups, this shows you an image preview in the Nautilus file manager.
 
 ## How it works
 
@@ -21,9 +26,34 @@ Works on any major Linux distro that ships GNOME as default: Ubuntu, Fedora, Arc
 
 ## Install
 
+### 1. Install dependencies
+
+Make sure `python3`, `sqlite3`, and `ffmpeg` are installed. On most distros they are already present, but if not:
+
+**Ubuntu / Debian / Pop!\_OS:**
 ```bash
+sudo apt install python3 sqlite3 ffmpeg
+```
+
+**Fedora:**
+```bash
+sudo dnf install python3 sqlite ffmpeg
+```
+
+**Arch / CachyOS / Manjaro:**
+```bash
+sudo pacman -S python sqlite ffmpeg
+```
+
+### 2. Clone the repo and run the installer
+
+```bash
+git clone https://github.com/kunohami/clip-studio-thumbnailer.git
+cd clip-studio-thumbnailer
 bash install.sh
 ```
+
+The installer will ask for your password once to copy files to system directories. After it finishes, open Nautilus and browse to your `.clip` files — previews will generate as you view them.
 
 ## Uninstall
 
